@@ -7,8 +7,8 @@ public ResponseInternal sendPrimaryroleApi() throws IOException, JsonException {
 
     // static date
     String maestrodate = "?snapshotDate=2025-02-15";
-    // LocalDate today = LocalDate.now();
-    // String formattedDate = today.toString();
+    LocalDate today = LocalDate.now();
+    String formattedDate = today.toString();
     // String maestrodate = "?snapshotDate="+formattedDate;
 
     RestTemplate restTemplate = new RestTemplate();
