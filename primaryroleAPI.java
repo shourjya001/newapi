@@ -99,5 +99,18 @@ public ResponseInternal sendPrimaryroleApi() throws IOException, JsonException {
         log.error("Unexpected status code: " + status);
     }
 
+// print to check
+    if (responseObject != null) {
+    try {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonResponse = mapper.writeValueAsString(responseObject);
+        System.out.println("Full API Response as JSON: " + jsonResponse);
+        // Optionally log it as well
+        log.info("Full API Response as JSON: " + jsonResponse);
+    } catch (JsonProcessingException e) {
+        e.printStackTrace();
+    }
+}
+
     return responseObject;
 }
