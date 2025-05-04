@@ -115,8 +115,8 @@ public class RestClientUtility {
 
         // static date
         String maestrodate = "?snapshotDate=2025-02-15";
-        // LocalDate today = LocalDate.now();
-        // String formattedDate = today.toString();
+        LocalDate today = LocalDate.now();
+        String formattedDate = today.toString();
         // String maestrodate = "?snapshotDate=" + formattedDate;
 
         RestTemplate restTemplate = new RestTemplate();
@@ -176,7 +176,7 @@ public class RestClientUtility {
                         new TypeReference<List<ResponseInternal>>() {});
 
                 List<InternalRegistrations> allInternalRegistrations = new ArrayList<>();
-                List<MaestroTableEntity> maestroTableEntities = new ArrayList<>();
+                // List<MaestroTableEntity> maestroTableEntities = new ArrayList<>();
 
                 for (ResponseInternal wrapper : responseObjects) {
                     if (wrapper.getInternalRegistrations() != null) {
