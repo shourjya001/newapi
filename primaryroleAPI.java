@@ -97,6 +97,8 @@ public ResponseInternal sendPrimaryroleApi() throws IOException, JsonException {
                 // Optionally log it as well
                 log.info("Full API Response as JSON: " + jsonResponse);
             } catch (JsonProcessingException e) {
+                System.err.println("Error converting response to JSON: " + e.getMessage());
+                log.error("Error converting response to JSON: " + e.getMessage());
                 e.printStackTrace();
             }
         }
